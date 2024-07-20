@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function EndUser() {
 	
@@ -2274,6 +2275,12 @@ Fuzzy Weight :{" "}
  
     <div className="headingofqf">Integrated final value</div>
 	<div className="finalinte">{integrated}</div>
+	
+	<div className="navbar">
+		<Link to={'/'} >Dev view</Link>
+		<Link to={'/tester'}>Tester view</Link>
+		<Link to={'/enduser'} className="active">Enduser view</Link>
+	</div>
 
 </div>
   );

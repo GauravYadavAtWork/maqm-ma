@@ -125,3 +125,39 @@ option {
 .resdiv{
   padding: 5px;
 }
+
+
+/* navbar css */
+
+.navbar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #c2c1c1;
+  color: #3f3f3f;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a {
+  color: #3f3f3f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.navbar a:hover {
+  color: black;
+  background-color: white;
+}
+
+.navbar .active{
+  font-size: 22px;
+  font-style: italic;
+  text-decoration: underline;
+}
