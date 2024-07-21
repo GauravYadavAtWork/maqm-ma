@@ -3379,6 +3379,7 @@ Fuzzy Weight :{" "}
 		<Link to={'/'} >Dev view</Link>
 		<Link to={'/tester'} className="active">Tester view</Link>
 		<Link to={'/enduser'}>Enduser view</Link>
+		<Link to={'/fuzzycalc'}>Fuzzy Calc</Link>
 	</div>
 
 </div>
