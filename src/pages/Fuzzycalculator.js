@@ -86,9 +86,9 @@ const FuzzyCalculator = () => {
     <button className="calculate-button" onClick={calculateFuzzyQualityRating}>Calculate</button>
     <div className="result">
       <h2>Result</h2>
-      <p>Developer: {result[0]}</p>
-      <p>Tester: {result[1]}</p>
-      <p>End-User: {result[2]}</p>
+      <p>{result[0]} {result[1]} {result[2]}</p>
+      {/* <p>Tester: {result[1]}</p>
+      <p>End-User: {result[2]}</p> */}
     </div>
   </div>
 
