@@ -8,6 +8,7 @@ const FuzzyCalculator = () => {
   const [testerWeight, setTesterWeight] = useState([0, 0, 0]);
   const [endUserWeight, setEndUserWeight] = useState([0, 0, 0]);
   const [result, setResult] = useState([0, 0, 0]);
+  const [integratedres, setIntegratedres] = useState(0);
 
   const handleInputChange = (setter, index, value) => {
     const newValues = [...setter];
@@ -41,12 +42,24 @@ const FuzzyCalculator = () => {
       maxResult[1],
       maxResult[2]
     ]);
+
+    const a = maxResult[0];
+    const b = maxResult[1];
+    const c = maxResult[2];
+
+    const p = ((a*a + b*b + a*b)/3) - (a*(a+b))/2;
+    const q = (c*(c+b))/2 - ((c*c + b*b + c*b)/3);
+    const r = (b-a)/2;
+    const s = (c-b)/2;
+
+    setIntegratedres((p+q)/(r+s));
+
   };
 
   return (
     <>
       <div className="containerhehe">
-    <h1>Fuzzy Quality Calculator</h1>
+    <h1>Overall View</h1>
     <div className="input-section">
       <h2>Developer's View</h2>
       <input type="number" step="0.01" value={developerView[0]} onChange={(e) => setDeveloperView(handleInputChange(developerView, 0, e.target.value))} />
@@ -86,17 +99,16 @@ const FuzzyCalculator = () => {
     <button className="calculate-button" onClick={calculateFuzzyQualityRating}>Calculate</button>
     <div className="result">
       <h2>Result</h2>
-      <p>{result[0]} {result[1]} {result[2]}</p>
-      {/* <p>Tester: {result[1]}</p>
-      <p>End-User: {result[2]}</p> */}
+      <p>{result[0]}, {result[1]}, {result[2]}</p>
+      <p>Overall Quality : {integratedres}</p>
     </div>
   </div>
 
     <div className="navbar">
-    <Link to={'/'} >Dev view</Link>
-    <Link to={'/tester'} >Tester view</Link>
-    <Link to={'/enduser'}>Enduser view</Link>
-    <Link to={'/fuzzycalc'} className="active">Fuzzy Calc</Link>
+      <Link to={'/'} >Dev view</Link>
+      <Link to={'/tester'} >Tester view</Link>
+      <Link to={'/enduser'}>Enduser view</Link>
+      <Link to={'/fuzzycalc'} className="active">Fuzzy Calc</Link>
     </div>
 
     </>
